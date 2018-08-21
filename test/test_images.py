@@ -22,7 +22,8 @@ class TestBasicFunction(unittest.TestCase):
         path = "data/input_data/impro_imagenet"
         images_names = os.listdir(path)
 
-        self.model = InceptionV3(include_top=True, weights='imagenet')
+        self.model = InceptionV3(include_top=True, weights='imagenet',
+                                 input_shape=(299, 299, 3))
         self.model.compile(optimizer='adam', loss='categorical_crossentropy')
         images = [image.load_img(os.path.join(path, name), target_size=(299, 299)) for name in images_names]
         images = [image.img_to_array(img) for img in images]
