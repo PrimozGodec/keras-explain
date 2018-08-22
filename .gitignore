@@ -106,3 +106,5 @@ ENV/
 # no pickle stuff on git
 *.pkl
 *.npy
+
+.pytest_cache
