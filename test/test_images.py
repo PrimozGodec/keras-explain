@@ -37,23 +37,23 @@ class TestBasicFunction(unittest.TestCase):
             self.assertTupleEqual(exp_pos.shape, (299, 299))
             self.assertTrue(exp_neg is None or exp_neg.shape == (299, 299))
 
-    def test_zeiler(self):
+    def test_graying_out(self):
        self._test_approach(GrayingOut, {"model": self.model}, self.images)
 
-    def test_zintgraf(self):
+    def test_prediction_diff(self):
         self._test_approach(
             PredictionDiff, {"model": self.model, "all_images": self.images},
             self.images)
 
-    def test_sundarajan(self):
+    def test_integrated_grad(self):
         self._test_approach(
             IntegratedGradients, {"model": self.model}, self.images)
 
-    def test_springenberg(self):
+    def test_guided_bp(self):
         self._test_approach(
             GuidedBP, {"model": self.model}, self.images)
 
-    def test_simonyan(self):
+    def test_saliency(self):
         self._test_approach(
             Saliency, {"model": self.model, "layer": 312}, self.images)
 
