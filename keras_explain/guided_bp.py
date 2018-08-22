@@ -5,6 +5,7 @@ from keras_explain.deep_viz_keras.guided_backprop import GuidedBackprop
 class GuidedBP:
 
     name = "Guided Back Propagation"
+    authors = "Springerberg et al."
 
     def __init__(self, model):
         self.model = model

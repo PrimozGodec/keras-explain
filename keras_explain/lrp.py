@@ -12,6 +12,7 @@ class LayerNotImplementedException(Exception):
 class LRP:
 
     name = "Layer-wise Relevance Propagation"
+    authors = "Bach et al."
 
     def __init__(self, model, alpha=2, beta=1):
         self.model = model

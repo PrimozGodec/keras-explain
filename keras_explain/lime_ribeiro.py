@@ -4,6 +4,7 @@ from lime import lime_image
 class Lime:
 
     name = "LIME"
+    authors = "Ribeiro et al."
 
     def __init__(self, model):
         self.model = model

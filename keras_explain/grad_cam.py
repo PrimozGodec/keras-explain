@@ -30,6 +30,7 @@ class GradCam:
 class GuidedGradCam:
 
     name = "GuidedGradCam"
+    authors = "Selvaraju et al."
 
     def __init__(self, model, layer=None):
         self.model = model

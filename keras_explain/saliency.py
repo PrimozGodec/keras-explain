@@ -4,6 +4,7 @@ from vis.visualization import visualize_saliency
 class Saliency:
 
     name = "Saliency"
+    authors = "Simonyan et al."
 
     def __init__(self, model, layer=None):
         self.model = model
