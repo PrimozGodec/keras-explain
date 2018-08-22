@@ -1,4 +1,5 @@
 import unittest
+import pytest
 import os
 
 import numpy as np
@@ -68,6 +69,12 @@ class TestBasicFunction(unittest.TestCase):
     def test_guided_grad_cam(self):
         self._test_approach(
             GuidedGradCam, {"model": self.model, "layer": 312}, self.images)
+
+    @pytest.mark.skip(reason="No way to test it with Inception, not all"
+                             "layers supported.")
+    def test_lrp(self):
+        self._test_approach(
+            LRP, {"model": self.model}, self.images)
 
 
 if __name__ == '__main__':

@@ -1,3 +1,5 @@
+import warnings
+
 import numpy as np
 import keras.backend as K
 from keras.engine import InputLayer
@@ -18,6 +20,11 @@ class LRP:
         self.model = model
         self.alpha = alpha
         self.beta = beta
+
+        warnings.warn("LRP is still in the testing phase. Be warned that some"
+                      "bugs could be present. If you find any"
+                      "please do not hesitate to report it on github: "
+                      "https://github.com/PrimozGodec/keras-explain/issues")
 
     def explain(self, image, target_class):
         model = self.model
