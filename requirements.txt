@@ -1,5 +1,5 @@
 Keras==2.1.6
--e git://github.com/marcotcr/lime#egg=lime
+lime
 -e git://github.com/PrimozGodec/keras-vis.git@aff42dcb489ef9812b365df9c37d9d6198bd3785#egg=keras_vis
 Pillow
 pytest
