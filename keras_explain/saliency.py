@@ -5,9 +5,14 @@ class Saliency:
 
     name = "Saliency"
 
-    def __init__(self, model, layer):
+    def __init__(self, model, layer=None):
         self.model = model
-        self.layer = layer
+
+        # if layer not set it is automatically set to last layer
+        if layer is None:
+            self.layer = len(model.layers) - 1
+        else:
+            self.layer = layer
 
     def explain(self, image, target_class):
         # generate images with removed parts

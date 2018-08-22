@@ -10,7 +10,6 @@ class IntegratedGradients:
 
     def __init__(self, model):
         self.model = model
-        pass
 
     def explain(self, image, target_class):
         print(self.model)
