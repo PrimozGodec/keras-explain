@@ -100,9 +100,6 @@ ENV/
 # mypy
 .mypy_cache/
 
-# remove the data form git
-data
-
 # remove pycharm stuff form git
 .idea/
 

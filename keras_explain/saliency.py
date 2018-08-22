@@ -1,9 +1,9 @@
 from vis.visualization import visualize_saliency
 
 
-class Simonyan:
+class Saliency:
 
-    name = "Simonyan"
+    name = "Saliency"
 
     def __init__(self, model, layer):
         self.model = model

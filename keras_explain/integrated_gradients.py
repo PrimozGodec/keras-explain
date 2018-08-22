@@ -3,9 +3,10 @@ import numpy as np
 from keras_explain.deep_viz_keras.integrated_gradients import IntegratedGradients
 
 
-class SundararajanIntegrated:
+class IntegratedGradients:
 
-    name = "SundararajanIntegrated"
+    name = "Integrated gradients"
+    authors = "Sundararajan et al."
 
     def __init__(self, model):
         self.model = model

@@ -1,9 +1,10 @@
 import numpy as np
 
 
-class Zeiler:
+class GrayingOut:
 
-    name = "zeiler"
+    name = "Graying out"
+    authors = "Zeiler et al."
 
     def __init__(self, model, kernel_size=10, jump=5):
         self.model = model

@@ -7,14 +7,14 @@ from keras.applications.inception_v3 import InceptionV3
 from keras.applications.inception_v3 import preprocess_input
 from keras.preprocessing import image
 
-from keras_explain.bach_lrp import BachLRP
-from keras_explain.ribeiro_lime import RibeiroLime
-from keras_explain.selvaraju import SelvarjuGradCam, SelvarjuGuidedGradCam
-from keras_explain.simonyan import Simonyan
-from keras_explain.spingenberg import SpingenbergGuidedBP
-from keras_explain.sundararajan import SundararajanIntegrated
-from keras_explain.zeiler import Zeiler
-from keras_explain.zintgraf import Zintgraf
+from keras_explain.lrp import LRP
+from keras_explain.lime_ribeiro import Lime
+from keras_explain.grad_cam import GradCam, GuidedGradCam
+from keras_explain.saliency import Saliency
+from keras_explain.guided_bp import GuidedBP
+from keras_explain.integrated_gradients import IntegratedGradients
+from keras_explain.graying_out import GrayingOut
+from keras_explain.prediction_diff import PredictionDiff
 
 class TestBasicFunction(unittest.TestCase):
 
@@ -38,36 +38,36 @@ class TestBasicFunction(unittest.TestCase):
             self.assertTrue(exp_neg is None or exp_neg.shape == (299, 299))
 
     def test_zeiler(self):
-       self._test_approach(Zeiler, {"model": self.model}, self.images)
+       self._test_approach(GrayingOut, {"model": self.model}, self.images)
 
     def test_zintgraf(self):
         self._test_approach(
-            Zintgraf, {"model": self.model, "all_images": self.images},
+            PredictionDiff, {"model": self.model, "all_images": self.images},
             self.images)
 
     def test_sundarajan(self):
         self._test_approach(
-            SundararajanIntegrated, {"model": self.model}, self.images)
+            IntegratedGradients, {"model": self.model}, self.images)
 
     def test_springenberg(self):
         self._test_approach(
-            SpingenbergGuidedBP, {"model": self.model}, self.images)
+            GuidedBP, {"model": self.model}, self.images)
 
     def test_simonyan(self):
         self._test_approach(
-            Simonyan, {"model": self.model, "layer": 312}, self.images)
+            Saliency, {"model": self.model, "layer": 312}, self.images)
 
     def test_lime(self):
         self._test_approach(
-            RibeiroLime, {"model": self.model}, self.images)
+            Lime, {"model": self.model}, self.images)
 
     def test_grad_cam(self):
         self._test_approach(
-            SelvarjuGradCam, {"model": self.model, "layer": 312}, self.images)
+            GradCam, {"model": self.model, "layer": 312}, self.images)
 
     def test_guided_grad_cam(self):
         self._test_approach(
-            SelvarjuGuidedGradCam, {"model": self.model, "layer": 312}, self.images)
+            GuidedGradCam, {"model": self.model, "layer": 312}, self.images)
 
 
 if __name__ == '__main__':

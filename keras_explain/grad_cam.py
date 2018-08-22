@@ -4,9 +4,9 @@ from vis.visualization import visualize_cam
 from keras_explain.deep_viz_keras.guided_backprop import GuidedBackprop
 
 
-class SelvarjuGradCam:
+class GradCam:
 
-    name = "SelvarjuGradCam"
+    name = "GradCam"
 
     def __init__(self, model, layer):
         self.model = model
@@ -22,9 +22,9 @@ class SelvarjuGradCam:
 
         return res, None
 
-class SelvarjuGuidedGradCam:
+class GuidedGradCam:
 
-    name = "SelvarjuGuidedGradCam"
+    name = "GuidedGradCam"
 
     def __init__(self, model, layer):
         self.model = model

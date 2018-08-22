@@ -9,9 +9,9 @@ class LayerNotImplementedException(Exception):
     pass
 
 
-class BachLRP:
+class LRP:
 
-    name = "Bach_LRP"
+    name = "Layer-wise Relevance Propagation"
 
     def __init__(self, model, alpha=2, beta=1):
         self.model = model

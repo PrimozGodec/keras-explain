@@ -2,9 +2,9 @@ import numpy as np
 from keras_explain.deep_viz_keras.guided_backprop import GuidedBackprop
 
 
-class SpingenbergGuidedBP:
+class GuidedBP:
 
-    name = "SpingenbergGuidedBP"
+    name = "Guided Back Propagation"
 
     def __init__(self, model):
         self.model = model

@@ -8,9 +8,10 @@ from keras_explain.zintgraf_utils.prediction_difference_analysis import \
     PredDiffAnalyser
 
 
-class Zintgraf:
+class PredictionDiff:
 
-    name = "Zintgraf"
+    name = "Prediction Difference Analysis"
+    authors = "Zintgraf et al."
 
     # window size (i.e., the size of the pixel patch that is marginalised out
     # in each step); k in alg 1 (see paper)

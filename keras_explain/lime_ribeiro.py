@@ -1,9 +1,9 @@
 from lime import lime_image
 
 
-class RibeiroLime:
+class Lime:
 
-    name = "ribeiro_lime"
+    name = "LIME"
 
     def __init__(self, model):
         self.model = model
