@@ -35,6 +35,8 @@ yet.
 
 #### GradCam
 
+    from keras_explain.grad_cam import GradCam
+    
     explainer = GradCam(model, layer=None)
     exp = explainer.explain(image, target_class)
     
@@ -53,6 +55,8 @@ Output:
 classification in a `target class`. 
 
 #### Guided GradCam
+
+    from keras_explain.grad_cam import GuidedGradCam
 
     explainer = GuidedGradCam(model, lyer=None)
     exp = explainer.explain(image, target_class)
@@ -73,6 +77,8 @@ classification in a `target class`.
 
 #### Guided back-propagation
 
+    from keras_explain.guided_bp import GuidedBP
+
     explainer = GuidedBP(model)
     exp = explainer.explain(image, target_class)
     
@@ -89,6 +95,8 @@ contribute to the classification in a `target class`.
 
 #### Integrated gradients
 
+    from keras_explain.integrated_gradients import IntegratedGradients
+    
     explainer = IntegratedGradients(model)
     exp = explainer.explain(image, target_class)
     
@@ -104,6 +112,8 @@ Output:
 to the classification in a `target class`. 
 
 #### Saliency
+
+    from keras_explain.saliency import Saliency
 
     explainer = Saliency(model, layer=None)
     exp = explainer.explain(image, target_class)
@@ -129,6 +139,8 @@ missing layers. If you wish you can implement any layer support yourself
 and submit it as a pull request. Since implementation is very custom any
 suggestion for improvement is welcome.
 
+    from keras_explain.lrp import LRP
+
     explainer = LRP(model)
     exp = explainer.explain(image, target_class)
     
@@ -146,6 +158,8 @@ to the classification in a `target class`.
 ###Model independent approaches
 
 #### Prediction difference
+
+    from keras_explain.prediction_diff import PredictionDiff
 
     explainer = PredictionDiff(model)
     exp_pos, exp_neg = explainer.explain(image, target_class)
@@ -165,6 +179,8 @@ against the classification in a `target class`.
 
 #### Basic graying out
 
+    from keras_explain.graying_out import GrayingOut
+
     explainer = GrayingOut(model)
     exp_pos, exp_neg = explainer.explain(image, target_class)
     
@@ -182,6 +198,8 @@ to the classification in a `target class`.
 against the classification in a `target class`. 
 
 #### LIME
+
+    from keras_explain.lime_ribeiro import Lime
 
     explainer = Lime(model)
     exp_pos, exp_neg = explainer.explain(image, target_class)
