@@ -20,10 +20,15 @@ class GradCam:
     def explain(self, image, target_class):
 
         # generate images with removed parts
-        res = visualize_cam(
-            model=self.model,
-            layer_idx=self.layer,
-            filter_indices=target_class, seed_input=image)
+        try:
+            res = visualize_cam(
+                model=self.model,
+                layer_idx=self.layer,
+                filter_indices=target_class, seed_input=image)
+        except TypeError:
+            print("GradCam need to have input dimension of the model defined."
+                  "Please define it or use other approach.")
+            raise
 
         return res, None
 
@@ -43,10 +48,15 @@ class GuidedGradCam:
 
     def explain(self, image, target_class):
         # generate images with removed parts
-        grad_cam_res = visualize_cam(
-            model=self.model,
-            layer_idx=self.layer,
-            filter_indices=target_class, seed_input=image)
+        try:
+            grad_cam_res = visualize_cam(
+                model=self.model,
+                layer_idx=self.layer,
+                filter_indices=target_class, seed_input=image)
+        except TypeError:
+            print("GradCam need to have input dimension of the model defined."
+                  "Please define it or use other approach.")
+            raise
 
         guided_bprop = GuidedBackprop(self.model, output_index=target_class)
 
