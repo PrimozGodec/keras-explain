@@ -29,6 +29,22 @@ Right now we are in the process of implementing the following approaches:
 - Layer-wise relevance propagation - we are adding layers that are not supported
 yet. 
 
+## Installation
+
+1. Install keras with theano or tensorflow backend. 
+   Note that this library requires Keras > 2.0. Currently, versions of Keras >= 2.2.0
+   are not supported sine there is a [bug in Keras](https://github.com/keras-team/keras/issues/10372).
+
+2. Install keras-explain
+
+   From PyPI
+   
+       pip install keras-explain
+       
+   From source: Clone this repository and install:   
+   
+       sudo python setup.py install
+
 ## Usage
 
 ### Gradient methods
