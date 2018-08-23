@@ -7,17 +7,17 @@ It supports following approaches:
 
 Gradient methods:
 
-- GradCam
-- Guided GradCam
-- Guided back-propagation
-- Integrated gradients
-- Saliency
-- Layer-wise relevance propagation [BETA]
+- GradCam [[Selvaraju](https://arxiv.org/abs/1610.02391)]
+- Guided GradCam [[Selvaraju](https://arxiv.org/abs/1610.02391)]
+- Guided back-propagation [[Springenberg](https://arxiv.org/abs/1412.6806)]
+- Integrated gradients [[Sundararajan](https://arxiv.org/abs/1703.01365)]
+- Saliency [[Simonyan](https://arxiv.org/abs/1312.6034)]
+- Layer-wise relevance propagation [BETA] [[Bach](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0130140)]
 
 Model-independent methods:
-- Prediction difference
-- Basic graying out
-- LIME
+- Prediction difference [[Zintgraf](https://arxiv.org/abs/1702.04595)]
+- Basic graying out [[Zeiler](https://arxiv.org/abs/1311.2901)]
+- LIME [[Ribeiro](https://arxiv.org/abs/1602.04938)]
 
 All approaches are easy to apply to your model in two lines of code. 
 If you have any suggestion for new approaches to be included in the package
