@@ -171,7 +171,7 @@ Output:
 - `exp` - explanation. LRP mark only features which contribute 
 to the classification in a `target class`. 
 
-###Model independent approaches
+### Model independent approaches
 
 #### Prediction difference
 
