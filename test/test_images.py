@@ -26,6 +26,7 @@ class TestBasicFunction(unittest.TestCase):
         self.model = InceptionV3(include_top=True, weights='imagenet',
                                  input_shape=(299, 299, 3))
         self.model.compile(optimizer='adam', loss='categorical_crossentropy')
+
         images = [image.load_img(
             os.path.join(path, name), target_size=(299, 299))
             for name in images_names]
@@ -34,6 +35,7 @@ class TestBasicFunction(unittest.TestCase):
         self.images = preprocess_input(images)
 
     def _test_approach(self, approach, kwargs, images):
+        print("Testing", approach)
         explainer = approach(**kwargs)
         for image in images:
             exp_pos, exp_neg = explainer.explain(image, 15)
