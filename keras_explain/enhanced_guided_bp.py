@@ -24,7 +24,7 @@ class Enhanced_GuidedBP:
         mask = guided_bprop1.get_mask(image)
         mask = np.maximum(0, mask)
 
-        output = self.model.predict(image)
+        output = self.model.predict(image[None, ...])
         index = np.argsort(output)[0]
 
         if index[-1] == target_class: contra_class = index[-2]
