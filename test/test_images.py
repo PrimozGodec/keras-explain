@@ -57,6 +57,10 @@ class TestBasicFunction(unittest.TestCase):
     def test_guided_bp(self):
         self._test_approach(
             GuidedBP, {"model": self.model}, self.images)
+        
+    def test_enhanced_guided_bp(self):
+        self._test_approach(
+            Enhanced_GuidedBP, {"model": self.model}, self.images)
 
     def test_saliency(self):
         self._test_approach(
