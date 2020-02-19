@@ -13,6 +13,7 @@ from keras_explain.lime_ribeiro import Lime
 from keras_explain.grad_cam import GradCam, GuidedGradCam
 from keras_explain.saliency import Saliency
 from keras_explain.guided_bp import GuidedBP
+from keras_explain.enhanced_guided_bp import Enhanced_GuidedBP
 from keras_explain.integrated_gradients import IntegratedGrad
 from keras_explain.graying_out import GrayingOut
 from keras_explain.prediction_diff import PredictionDiff
@@ -57,6 +58,10 @@ class TestBasicFunction(unittest.TestCase):
     def test_guided_bp(self):
         self._test_approach(
             GuidedBP, {"model": self.model}, self.images)
+        
+    def test_enhanced_guided_bp(self):
+        self._test_approach(
+            Enhanced_GuidedBP, {"model": self.model}, self.images)
 
     def test_saliency(self):
         self._test_approach(
